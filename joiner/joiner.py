@@ -1,5 +1,21 @@
 #!/usr/bin/env python3
 
+# Utilidad joiner, https://github.com/dev-pep/utilidades
+# (c) dev-pep, 2021
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see https://www.gnu.org/licenses/.
+
 # Utilidad para juntar en un solo archivo .md todos los archivos pertenecientes
 # a un repositorio de documentación.
 # El archivo resultante puede ser procesado con pandoc para convertir la documentación
@@ -75,4 +91,7 @@ else:
     elif (not os.path.isfile(root + "/README.md")) or (not os.path.isdir(root + "/capitulos")):
         print("No existe archivo README.md o directorio de capítulos")
     else:
-        procesa(root)
+        if '/' in root or '\\' in root:
+            print("El nombre del directorio no debe contener barras")
+        else:
+            procesa(root)
