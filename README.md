@@ -2,8 +2,7 @@
 
 Utilidades varias
 
-1. [Joiner](joiner/)
+1. [Formatear documentos](formats/)
 
- Utilidad para juntar en un solo archivo .md todos los archivos pertenecientes a un repositorio de documentación.
+ Utilidades para generar documentación en varios formatos (usando ***pandoc***) a partir de los archivos ***.md*** de los diferentes repositorios.
 
- El archivo resultante puede ser procesado con `pandoc` para convertir la documentación en un solo archivo de cualquier formato.
