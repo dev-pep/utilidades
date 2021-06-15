@@ -125,4 +125,5 @@ for c in compilaciones:
     os.system(f'pandoc -o "{outFile}" --metadata title="{c}" "{inFile}"')
     # PDF
     print(f"Exportando '{c}.pdf'")
-    os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFile}" 2> /dev/null >/dev/null')
+    inFile = os.path.join(outputDir, c + ".odt")
+    os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFile}" 2> /dev/null > /dev/null')
