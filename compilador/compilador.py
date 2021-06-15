@@ -115,11 +115,14 @@ fMakeList.close()
 for c in compilaciones:
     inFile = os.path.join(outputDir, c + ".md")
     # ODT
-    print(f"Exportando {c}.odt")
+    print(f"Exportando '{c}.odt'")
     outFile = os.path.join(outputDir, c + ".odt")
     refFile = os.path.join(scriptDir, "plantilla-pandoc.odt")
     os.system(f'pandoc -o "{outFile}" --reference-doc="{refFile}" "{inFile}"')
     # EPUB
-    print(f"Exportando {c}.epub")
+    print(f"Exportando '{c}.epub'")
     outFile = os.path.join(outputDir, c + ".epub")
     os.system(f'pandoc -o "{outFile}" --metadata title="{c}" "{inFile}"')
+    # PDF
+    print(f"Exportando '{c}.pdf'")
+    os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFile}" 2> /dev/null >/dev/null')
