@@ -126,4 +126,5 @@ for c in compilaciones:
     # PDF
     print(f"Exportando '{c}.pdf'")
     inFile = os.path.join(outputDir, c + ".odt")
-    os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFile}" 2> /dev/null > /dev/null')
+    # Solo Unix:
+    os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFile}" >/dev/null 2>&1')
