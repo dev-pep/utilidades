@@ -1,0 +1,42 @@
+Compilador de documentación
+===========================
+
+Para unir todos los .md de un proyecto en un solo archivo .md, y exportación
+a otros formatos, según indicado en archivo 'Makelist'.
+
+
+
+Pandoc
+======
+
+Para convertir a odt, se usará el archivo de referencia 'plantilla-pandoc.odt'
+(contiene los estilos adecuados):
+
+pandoc -o documento.odt --reference-doc=plantilla-pandoc.odt documento.md
+
+Para epub:
+
+pandoc -o documento.epub --metadata title="título" documento.md
+
+
+
+Anexo
+=====
+
+Aspectos del formato markdown a tener en cuenta:
+
+Caracteres especiales que quizá convenga incluir escaped:
+
+< (los que puedan iniciar etiqueta)
+
+_ (no es necesario en expresiones de este_tipo, pero sí cuando se puede confundir
+con formato de negrita/cursiva)
+
+* (si se puede confundir con el estilo de letra)
+
+\
+
+Dentro de bloques de código (``` o `), no hay que usar caracteres de escape.
+
+Las listas no pueden estar pegadas al párrafo anterior ni al posterior.
+Una sublista debería tener 4 espacios de indentación, para que exporte bien en pandoc.

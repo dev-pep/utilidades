@@ -1,0 +1,128 @@
+# Archivo de compilación
+
+# Configuración ***************************************************************
+
+# Directorios:
+# Por defecto: dirbase='Github', diroutput='docs'
+dirbase=GitHub
+diroutput=docs
+# Una línea 'salida=...' da por terminada la configuración
+
+# Compilaciones ***************************************************************
+
+# Una línea 'ignora' hace que se ignoren los archivos que hay debajo, dentro
+# de la presente compilación. Si esta línea está justo debajo de 'salida=...',
+# la compilación completa es ignorada.
+# Una línea 'salida=...' o un EOF dan por terminada la compilación actual; en el
+# primer caso, empieza una nueva compilación.
+# Todas las rutas son relativas a 'dirbase'.
+
+# doc-css
+salida=Apuntes de CSS
+#ignora
+doc-css/README.md
+doc-css/capitulos/01-introduccion.md
+doc-css/capitulos/02-selectores.md
+doc-css/capitulos/03-colores-fuentes.md
+doc-css/capitulos/04-layout.md
+
+# doc-javascript
+salida=Apuntes de JavaScript
+#ignora
+doc-javascript/README.md
+doc-javascript/capitulos/01-introduccion.md
+doc-javascript/capitulos/02-tipos.md
+doc-javascript/capitulos/03-expresiones-ops.md
+doc-javascript/capitulos/04-sentencias.md
+doc-javascript/capitulos/05-objetos.md
+doc-javascript/capitulos/06-arrays.md
+doc-javascript/capitulos/07-funciones.md
+doc-javascript/capitulos/08-clases.md
+doc-javascript/capitulos/09-modulos.md
+doc-javascript/capitulos/10-js-en-navegador.md
+
+# doc-composer
+salida=Apuntes de Composer
+#ignora
+doc-composer/README.md
+doc-composer/capitulos/01-instalacion.md
+doc-composer/capitulos/02-paquetes.md
+doc-composer/capitulos/03-comandos.md
+doc-composer/capitulos/04-restricciones.md
+
+# doc-laravel
+salida=Apuntes de Laravel
+#ignora
+doc-laravel/README.md
+doc-laravel/capitulos/01-primeros-pasos.md
+doc-laravel/capitulos/02-arquitectura.md
+doc-laravel/capitulos/03-bases.md
+doc-laravel/capitulos/04-frontend.md
+doc-laravel/capitulos/05-seguridad.md
+doc-laravel/capitulos/06-bases-de-datos.md
+doc-laravel/capitulos/07-profundizando.md
+doc-laravel/capitulos/anexo-01-ldap-record.md
+
+# doc-php
+salida=Apuntes de PHP
+#ignora
+doc-php/README.md
+doc-php/capitulos/01-sintaxis-basica.md
+doc-php/capitulos/02-tipos.md
+doc-php/capitulos/03-variables.md
+doc-php/capitulos/04-constantes.md
+doc-php/capitulos/05-operadores.md
+doc-php/capitulos/06-estructuras-control.md
+doc-php/capitulos/07-funciones.md
+doc-php/capitulos/08-clases-objetos.md
+doc-php/capitulos/09-namespaces.md
+doc-php/capitulos/10-variables-predefinidas.md
+
+# doc-vim
+salida=Apuntes de Vim
+ignora
+doc-vim/README.md
+doc-vim/capitulos/01-introduccion.md
+doc-vim/capitulos/02-tutorial.md
+doc-vim/capitulos/03-primeros-pasos.md
+doc-vim/capitulos/04-cortar-copiar-pegar.md
+doc-vim/capitulos/05-buscar-reemplazar.md
+doc-vim/capitulos/06-buffers-ventanas.md
+doc-vim/capitulos/07-modo-visual-macros-etc.md
+doc-vim/capitulos/08-mapeo-configuracion.md
+doc-vim/capitulos/09-programacion.md
+doc-vim/capitulos/10-referencia-rapida.md
+
+# doc-c - estándar
+salida=Apuntes de C
+#ignora
+doc-c/capitulos/c-estandar.md
+
+# doc-c - notas
+salida=Notas de C y utilidades
+#ignora
+doc-c/capitulos/notas.md
+doc-c/capitulos/gcc.md
+
+# doc-c - biblioteca
+salida=Biblioteca estándar de C
+#ignora
+doc-c/capitulos/lib-stdio.md
+doc-c/capitulos/lib-stdlib.md
+
+# doc-python - tutorial
+salida=Tutorial de Python
+#ignora
+doc-python/capitulos/tutorial.md
+
+# doc-python - referencia
+salida=Referencia de Python
+#ignora
+doc-python/capitulos/referencia.md
+
+# doc-python - biblioteca
+salida=Biblioteca estándar de Python
+#ignora
+doc-python/capitulos/libstd-01-builtins.md
+doc-python/capitulos/libstd-02-tipos-builtin.md
+doc-python/capitulos/libstd-03-formato.md
