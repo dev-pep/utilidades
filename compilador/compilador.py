@@ -32,9 +32,16 @@ def procesa(archivo, destino, atributo):
     fout.write("\n")
     for linea in fin:
         # Eliminaremos los enlaces, si los hay:
-        m = re.search("(.*\[.*]\().*\)(.*)", linea)
+        m = re.search("(.*[^!]\[.*]\().*(\).*)", linea)
         if m:
-            linea = m.group(1) + "#)" + m.group(2) + "\n"
+            linea = m.group(1) + "#" + m.group(2) + "\n"
+        else:  # no es enlace; ¿será imagen?
+            m = re.search("(.*!\[.*]\()(.*)(\).*)", linea)
+            if m:  # si es imagen, convertimos de path relativo a absoluto
+                # (se asume ruta de la imagen relativa al archivo .md)
+                ruta = (os.path.normpath(
+                    os.path.join(os.path.dirname(archivo), m.group(2))))
+                linea = m.group(1) + ruta + m.group(3) + "\n"
         fout.write(linea)
     fout.close()
     fin.close()
@@ -54,9 +61,12 @@ def next_linea(f):
 
 base = 'GitHub'
 output = 'docs'
-# TODO: si no existe Makelist?
 scriptDir = os.path.dirname(os.path.abspath(__file__))
-fMakeList = open(os.path.join(scriptDir, 'Makelist'), 'rt')
+try:
+    fMakeList = open(os.path.join(scriptDir, 'Makelist'), 'rt')
+except FileNotFoundError:
+    print(f"Archivo 'Makelist' no existente.\n")
+    exit(0)
 
 # Parse config:
 linea = next_linea(fMakeList)

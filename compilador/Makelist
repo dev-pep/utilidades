@@ -41,6 +41,16 @@ doc-javascript/capitulos/08-clases.md
 doc-javascript/capitulos/09-modulos.md
 doc-javascript/capitulos/10-js-en-navegador.md
 
+# doc-git
+salida=Apuntes de Git
+#ignora
+doc-git/README.md
+doc-git/capitulos/01-primeros-pasos.md
+doc-git/capitulos/02-bases.md
+doc-git/capitulos/03-branching.md
+doc-git/capitulos/04-servidor-remoto.md
+doc-git/capitulos/05-configuracion.md
+
 # doc-composer
 salida=Apuntes de Composer
 #ignora
