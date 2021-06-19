@@ -124,17 +124,28 @@ fMakeList.close()
 # directorio de salida):
 for c in compilaciones:
     inFile = os.path.join(outputDir, c + ".md")
+
+    # HTML
+    print(f"Exportando '{c}.html'")
+    outFile = os.path.join(outputDir, c + ".html")
+    os.system('pandoc --standalone --toc --toc-depth 2 --quiet '
+        f'--data-dir {scriptDir} -H styles.html '
+        f'-o "{outFile}" "{inFile}"')
+    # TO-DO: imágenes en HTML
+
     # ODT
     print(f"Exportando '{c}.odt'")
     outFile = os.path.join(outputDir, c + ".odt")
     refFile = os.path.join(scriptDir, "plantilla-pandoc.odt")
     os.system(f'pandoc -o "{outFile}" --reference-doc="{refFile}" "{inFile}"')
-    # EPUB
-    print(f"Exportando '{c}.epub'")
-    outFile = os.path.join(outputDir, c + ".epub")
-    os.system(f'pandoc -o "{outFile}" --metadata title="{c}" "{inFile}"')
+
     # PDF
     print(f"Exportando '{c}.pdf'")
     inFile = os.path.join(outputDir, c + ".odt")
-    # Solo Unix:
+    # Solo Unix con libreoffice (debe ir después de conversión ODT):
     os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFile}" >/dev/null 2>&1')
+
+    # EPUB
+#    print(f"Exportando '{c}.epub'")
+#    outFile = os.path.join(outputDir, c + ".epub")
+#    os.system(f'pandoc -o "{outFile}" --metadata title="{c}" "{inFile}"')
