@@ -36,6 +36,8 @@ con formato de negrita/cursiva)
 
 \
 
+[, ]
+
 Dentro de bloques de código (``` o `), no hay que usar caracteres de escape.
 
 Las listas no pueden estar pegadas al párrafo anterior ni al posterior.
