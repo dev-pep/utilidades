@@ -108,7 +108,7 @@ while linea:
         ignora = True
     elif not ignora:
         if primero:
-            print(f"Procesando {salida}.md...")
+            print(f"Procesando '{salida}.md'...")
             procesa(os.path.join(baseDir, linea),
                     os.path.join(outputDir, salida + ".md"), "wt")
             primero = False
@@ -126,11 +126,11 @@ for c in compilaciones:
     inFile = os.path.join(outputDir, c + ".md")
 
     # HTML
-    print(f"Exportando '{c}.html'")
-    outFile = os.path.join(outputDir, c + ".html")
-    os.system('pandoc --standalone --toc --toc-depth 2 --quiet '
-        f'--data-dir {scriptDir} -H styles.html '
-        f'-o "{outFile}" "{inFile}"')
+#    print(f"Exportando '{c}.html'")
+#    outFile = os.path.join(outputDir, c + ".html")
+#    os.system('pandoc --standalone --toc --toc-depth 2 --quiet '
+#        f'--data-dir {scriptDir} -H styles.html '
+#        f'-o "{outFile}" "{inFile}"')
     # TO-DO: imágenes en HTML
 
     # ODT
@@ -139,13 +139,19 @@ for c in compilaciones:
     refFile = os.path.join(scriptDir, "plantilla-pandoc.odt")
     os.system(f'pandoc -o "{outFile}" --reference-doc="{refFile}" "{inFile}"')
 
-    # PDF
-    print(f"Exportando '{c}.pdf'")
-    inFile = os.path.join(outputDir, c + ".odt")
+    # PDF desde ODT (con libreoffice)
+#    print(f"Exportando '{c}.pdf'")
+#    inFileOdt = os.path.join(outputDir, c + ".odt")
     # Solo Unix con libreoffice (debe ir después de conversión ODT):
-    os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFile}" >/dev/null 2>&1')
+#    os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFileOdt}" >/dev/null 2>&1')
 
-    # EPUB
+    # EPUB desde markup
 #    print(f"Exportando '{c}.epub'")
 #    outFile = os.path.join(outputDir, c + ".epub")
 #    os.system(f'pandoc -o "{outFile}" --metadata title="{c}" "{inFile}"')
+
+    # EPUB desde html
+#    print(f"Exportando '{c}.epub'")
+#    outFile = os.path.join(outputDir, c + ".epub")
+#    inFileHtml = os.path.join(outputDir, c + ".html")
+#    os.system(f'pandoc -o "{outFile}" --metadata title="{c}" "{inFileHtml}"')
