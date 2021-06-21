@@ -6,7 +6,8 @@
 # Por defecto: dirbase='Github', diroutput='docs'
 dirbase=GitHub
 diroutput=docs
-# Una línea 'salida=...' da por terminada la configuración
+# Una línea 'salida=...' da por terminada la configuración actual
+# y empieza la siguiente
 
 # Compilaciones ***************************************************************
 
@@ -19,7 +20,7 @@ diroutput=docs
 
 # doc-css
 salida=Apuntes de CSS
-#ignora
+ignora
 doc-css/README.md
 doc-css/capitulos/01-introduccion.md
 doc-css/capitulos/02-selectores.md
@@ -28,7 +29,7 @@ doc-css/capitulos/04-layout.md
 
 # doc-javascript
 salida=Apuntes de JavaScript
-#ignora
+ignora
 doc-javascript/README.md
 doc-javascript/capitulos/01-introduccion.md
 doc-javascript/capitulos/02-tipos.md
@@ -43,7 +44,7 @@ doc-javascript/capitulos/10-js-en-navegador.md
 
 # doc-git
 salida=Apuntes de Git
-#ignora
+ignora
 doc-git/README.md
 doc-git/capitulos/01-primeros-pasos.md
 doc-git/capitulos/02-bases.md
@@ -53,7 +54,7 @@ doc-git/capitulos/05-configuracion.md
 
 # doc-composer
 salida=Apuntes de Composer
-#ignora
+ignora
 doc-composer/README.md
 doc-composer/capitulos/01-instalacion.md
 doc-composer/capitulos/02-paquetes.md
@@ -62,7 +63,7 @@ doc-composer/capitulos/04-restricciones.md
 
 # doc-laravel
 salida=Apuntes de Laravel
-#ignora
+ignora
 doc-laravel/README.md
 doc-laravel/capitulos/01-primeros-pasos.md
 doc-laravel/capitulos/02-arquitectura.md
@@ -75,7 +76,7 @@ doc-laravel/capitulos/anexo-01-ldap-record.md
 
 # doc-php
 salida=Apuntes de PHP
-#ignora
+ignora
 doc-php/README.md
 doc-php/capitulos/01-sintaxis-basica.md
 doc-php/capitulos/02-tipos.md
@@ -103,36 +104,32 @@ doc-vim/capitulos/08-mapeo-configuracion.md
 doc-vim/capitulos/09-programacion.md
 doc-vim/capitulos/10-referencia-rapida.md
 
-# doc-c - estándar
+# doc-c - lenguaje y utilidades
 salida=Apuntes de C
 #ignora
 doc-c/capitulos/c-estandar.md
-
-# doc-c - notas
-salida=Notas de C y utilidades
-#ignora
 doc-c/capitulos/notas.md
 doc-c/capitulos/gcc.md
 
 # doc-c - biblioteca
 salida=Biblioteca estándar de C
-#ignora
+ignora
 doc-c/capitulos/lib-stdio.md
 doc-c/capitulos/lib-stdlib.md
 
 # doc-python - tutorial
 salida=Tutorial de Python
-#ignora
+ignora
 doc-python/capitulos/tutorial.md
 
 # doc-python - referencia
 salida=Referencia de Python
-#ignora
+ignora
 doc-python/capitulos/referencia.md
 
 # doc-python - biblioteca
 salida=Biblioteca estándar de Python
-#ignora
+ignora
 doc-python/capitulos/libstd-01-builtins.md
 doc-python/capitulos/libstd-02-tipos-builtin.md
 doc-python/capitulos/libstd-03-formato.md

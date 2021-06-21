@@ -139,13 +139,19 @@ for c in compilaciones:
     refFile = os.path.join(scriptDir, "plantilla-pandoc.odt")
     os.system(f'pandoc -o "{outFile}" --reference-doc="{refFile}" "{inFile}"')
 
-    # PDF
+    # PDF desde ODT (con libreoffice)
     print(f"Exportando '{c}.pdf'")
-    inFile = os.path.join(outputDir, c + ".odt")
+    inFileOdt = os.path.join(outputDir, c + ".odt")
     # Solo Unix con libreoffice (debe ir después de conversión ODT):
-    os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFile}" >/dev/null 2>&1')
+    os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFileOdt}" >/dev/null 2>&1')
 
-    # EPUB
+    # EPUB desde markup
 #    print(f"Exportando '{c}.epub'")
 #    outFile = os.path.join(outputDir, c + ".epub")
 #    os.system(f'pandoc -o "{outFile}" --metadata title="{c}" "{inFile}"')
+
+    # EPUB desde html
+    print(f"Exportando '{c}.epub'")
+    outFile = os.path.join(outputDir, c + ".epub")
+    inFileHtml = os.path.join(outputDir, c + ".html")
+    os.system(f'pandoc -o "{outFile}" --metadata title="{c}" "{inFileHtml}"')
