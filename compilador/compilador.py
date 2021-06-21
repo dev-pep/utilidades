@@ -140,32 +140,19 @@ for c in compilaciones:
     os.system(f'pandoc -o "{outFile}" --reference-doc="{refFile}" "{inFile}"')
 
     # PDF desde ODT (con libreoffice)
-<<<<<<< HEAD
 #    print(f"Exportando '{c}.pdf'")
 #    inFileOdt = os.path.join(outputDir, c + ".odt")
     # Solo Unix con libreoffice (debe ir después de conversión ODT):
 #    os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFileOdt}" >/dev/null 2>&1')
-=======
-    print(f"Exportando '{c}.pdf'")
-    inFileOdt = os.path.join(outputDir, c + ".odt")
-    # Solo Unix con libreoffice (debe ir después de conversión ODT):
-    os.system(f'libreoffice --headless --convert-to pdf --outdir "{outputDir}" "{inFileOdt}" >/dev/null 2>&1')
->>>>>>> f26913ef408275f1116fb64120054157e1567ffb
 
-    # EPUB desde markup
+    # EPUB
 #    print(f"Exportando '{c}.epub'")
 #    outFile = os.path.join(outputDir, c + ".epub")
 #    os.system(f'pandoc -o "{outFile}" --metadata title="{c}" "{inFile}"')
 
     # EPUB desde html
-<<<<<<< HEAD
 #    print(f"Exportando '{c}.epub'")
 #    outFile = os.path.join(outputDir, c + ".epub")
 #    inFileHtml = os.path.join(outputDir, c + ".html")
 #    os.system(f'pandoc -o "{outFile}" --metadata title="{c}" "{inFileHtml}"')
-=======
-    print(f"Exportando '{c}.epub'")
-    outFile = os.path.join(outputDir, c + ".epub")
-    inFileHtml = os.path.join(outputDir, c + ".html")
-    os.system(f'pandoc -o "{outFile}" --metadata title="{c}" "{inFileHtml}"')
->>>>>>> f26913ef408275f1116fb64120054157e1567ffb
+
