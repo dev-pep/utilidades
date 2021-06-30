@@ -106,7 +106,7 @@ doc-vim/capitulos/10-referencia-rapida.md
 
 # doc-c - lenguaje y utilidades
 salida=Apuntes de C
-#ignora
+ignora
 doc-c/capitulos/c-estandar.md
 doc-c/capitulos/notas.md
 doc-c/capitulos/gcc.md
@@ -116,6 +116,11 @@ salida=Biblioteca estándar de C
 ignora
 doc-c/capitulos/lib-stdio.md
 doc-c/capitulos/lib-stdlib.md
+
+#doc-c - tmux
+salida=Apuntes de tmux
+ignora
+doc-c/capitulos/tmux.md
 
 # doc-python - tutorial
 salida=Tutorial de Python
@@ -130,6 +135,12 @@ doc-python/capitulos/referencia.md
 # doc-python - biblioteca
 salida=Biblioteca estándar de Python
 ignora
-doc-python/capitulos/libstd-01-builtins.md
-doc-python/capitulos/libstd-02-tipos-builtin.md
-doc-python/capitulos/libstd-03-formato.md
+doc-python/capitulos/libstd-builtins.md
+doc-python/capitulos/libstd-tipos-builtin.md
+doc-python/capitulos/libstd-formato.md
+doc-python/capitulos/libstd-ctypes.md
+
+# doc-python - extensiones C
+salida=Apuntes del API C de Python
+ignora
+doc-python/capitulos/extensiones-c.md
