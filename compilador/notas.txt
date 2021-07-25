@@ -36,7 +36,8 @@ con formato de negrita/cursiva)
 
 \
 
-[, ]
+Caracteres como [ ] $ -, etc. es posible que debar ir escaped, sobre todo si van
+aislados, entre asteriscos de formato.
 
 Dentro de bloques de código (``` o `), no hay que usar caracteres de escape.
 
