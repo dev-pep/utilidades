@@ -26,21 +26,43 @@ import os
 import re
 
 
+def kebab(s):
+    resul = ''
+    for c in s:
+        if c.isalnum() or c == ' ':
+            resul += c
+    resul = resul.strip().lower()
+    resul = resul.replace(' ', '-')
+    return resul
+
+
 def procesa(archivo, destino, atributo):
+    print('    Procesando', archivo)
     fin = open(archivo, "rt")
     fout = open(destino, atributo)
     fout.write("\n")
     for linea in fin:
-        # Eliminaremos los enlaces, si los hay:
-        m = re.search("(.*[^!]\[.*]\().*(\).*)", linea)
-        if m:
-            linea = m.group(1) + "#" + m.group(2) + "\n"
+        # Tratamiento de los enlaces (si hay):
+        m = re.search("(.*[^!]\[.*]\()(.*)(\).*)", linea)
+        if m:  # ¿hay enlace en la línea?
+            print('        Enlace:', m.group(2))
+            # Veamos si enlaza a un capítulo:
+            chapterFilename = os.path.join(os.path.dirname(archivo), m.group(2))
+            if os.path.exists(chapterFilename):
+                # Si es un capítulo hay que extraer el título en su primera línea
+                # y pasarlo a kebab-case para que haga un enlace interno.
+                with open(chapterFilename) as fchapter:
+                    enlace = '#' + kebab(fchapter.readline())  # asumimos título en primera línea del capítulo
+            else:
+                enlace = m.group(2)
+            linea = m.group(1) + enlace + m.group(3) + "\n"
         else:  # no es enlace; ¿será imagen?
             m = re.search("(.*!\[.*]\()(.*)(\).*)", linea)
-            if m:  # si es imagen, convertimos de path relativo a absoluto
+            if m:
+                # Si es imagen, convertimos de path relativo a absoluto
                 # (se asume ruta de la imagen relativa al archivo .md)
-                ruta = (os.path.normpath(
-                    os.path.join(os.path.dirname(archivo), m.group(2))))
+                ruta = (os.path.normpath(os.path.join(os.path.dirname(archivo), m.group(2))))
+                print('        Imagen:', ruta)
                 linea = m.group(1) + ruta + m.group(3) + "\n"
         fout.write(linea)
     fout.close()

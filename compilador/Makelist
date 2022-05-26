@@ -76,7 +76,7 @@ doc-laravel/capitulos/anexo-01-ldap-record.md
 
 # doc-php
 salida=Apuntes de PHP
-ignora
+#ignora
 doc-php/README.md
 doc-php/capitulos/01-sintaxis-basica.md
 doc-php/capitulos/02-tipos.md
@@ -87,7 +87,17 @@ doc-php/capitulos/06-estructuras-control.md
 doc-php/capitulos/07-funciones.md
 doc-php/capitulos/08-clases-objetos.md
 doc-php/capitulos/09-namespaces.md
-doc-php/capitulos/10-variables-predefinidas.md
+doc-php/capitulos/10-excepciones.md
+doc-php/capitulos/11-generators.md
+doc-php/capitulos/12-variables-predefinidas.md
+doc-php/capitulos/13-otros.md
+doc-php/capitulos/ext-ldap.md
+doc-php/capitulos/lib-ldaprecord.md
+doc-php/capitulos/lib-monolog.md
+doc-php/capitulos/lib-knpmenu.md
+doc-php/capitulos/lib-goutte.md
+doc-php/capitulos/ap-sql.md
+doc-php/capitulos/ap-funciones.md
 
 # doc-vim
 salida=Apuntes de Vim

@@ -9,12 +9,29 @@ a otros formatos, según indicado en archivo 'Makelist'.
 Pandoc
 ======
 
+odt
+---
+
 Para convertir a odt, se usará el archivo de referencia 'plantilla-pandoc.odt'
 (contiene los estilos adecuados):
 
 pandoc -o documento.odt --reference-doc=plantilla-pandoc.odt documento.md
 
-Para epub:
+Tal como recomienda la documentación de pandoc, la plantilla se ha generado a partir de:
+
+pandoc -o plantilla-pandoc.odt --print-default-data-file reference.odt
+
+Y luego se ha modificado esta plantilla generada (estilos).
+
+Una vez tenemos el archivo convertido, habría que mejorar algunas cosas:
+- En caso que aparezca descuadrado, arreglar la alineación del índice inicial.
+- Añadir bordes a las tablas. Se puede hacer manualmente (recomendado) o aplicar el estilo de tabla
+  "Columnas simples" o "Filas simples". En este último caso, habrá que reformatear tipos de letra probablemente.
+- Añadir un párrafo en blanco al principio y al final de cada tabla si aparece muy pegado al texto.
+- Opcionalmente, podríamos insertar un índice en el documento.
+
+epub
+----
 
 pandoc -o documento.epub --metadata title="título" documento.md
 
@@ -36,10 +53,14 @@ con formato de negrita/cursiva)
 
 \
 
-Caracteres como [ ] $ -, etc. es posible que debar ir escaped, sobre todo si van
+Caracteres como [ ] $ -, etc. es posible que deban ir escaped, sobre todo si van
 aislados, entre asteriscos de formato.
 
 Dentro de bloques de código (``` o `), no hay que usar caracteres de escape.
 
 Las listas no pueden estar pegadas al párrafo anterior ni al posterior.
 Una sublista debería tener 4 espacios de indentación, para que exporte bien en pandoc.
+
+Estéticamente, no queda bien que un título esté en cursiva entero (# *Título*). Una parte
+del título sí es aceptable.
+
