@@ -76,7 +76,7 @@ doc-laravel/capitulos/anexo-01-ldap-record.md
 
 # doc-php
 salida=Apuntes de PHP
-#ignora
+ignora
 doc-php/README.md
 doc-php/capitulos/01-sintaxis-basica.md
 doc-php/capitulos/02-tipos.md
@@ -154,3 +154,20 @@ doc-python/capitulos/libstd-ctypes.md
 salida=Apuntes del API C de Python
 ignora
 doc-python/capitulos/extensiones-c.md
+
+# doc-apache
+salida=Apuntes de Apache
+#ignora
+doc-apache/README.md
+doc-apache/capitulos/01-introduccion.md
+doc-apache/capitulos/02-configuracion.md
+doc-apache/capitulos/03-variables.md
+doc-apache/capitulos/04-logging.md
+doc-apache/capitulos/05-mapping.md
+doc-apache/capitulos/06-virtual-hosts.md
+doc-apache/capitulos/07-rewrite.md
+doc-apache/capitulos/08-autenticacion-autorizacion.md
+doc-apache/capitulos/09-otros.md
+doc-apache/capitulos/directivas-core.md
+doc-apache/capitulos/mod-authnz-ldap.md
+

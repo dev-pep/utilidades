@@ -29,10 +29,11 @@ import re
 def kebab(s):
     resul = ''
     for c in s:
-        if c.isalnum() or c == ' ':
+        if c.isalnum() or c == '-' or c == '_':
             resul += c
-    resul = resul.strip().lower()
-    resul = resul.replace(' ', '-')
+        elif c == ' ':
+            resul += '-'
+    resul = resul.strip('-').lower()
     return resul
 
 
